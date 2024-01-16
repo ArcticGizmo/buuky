@@ -1,23 +1,21 @@
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Tab 1</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 1</ion-title>
-        </ion-toolbar>
-      </ion-header>
+  <BaseTabPage title="Books">
+    All your books here
 
-      <ExploreContainer name="Tab 1 page" />
-    </ion-content>
-  </ion-page>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button @tap="onAdd">
+        <ion-icon :icon="add" />
+      </ion-fab-button>
+    </ion-fab>
+  </BaseTabPage>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonFab, IonIcon, IonFabButton } from '@ionic/vue';
+import { add } from 'ionicons/icons';
+import BaseTabPage from './base/BaseTabPage.vue';
+
+const onAdd = () => {
+  console.dir('--- on add');
+};
 </script>
