@@ -1,5 +1,6 @@
 import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue'
+import checker from 'vite-plugin-checker';
 import path from 'path'
 import { defineConfig } from 'vite'
 
@@ -7,6 +8,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     vue(),
+    checker({ vueTsc: true }),
     legacy()
   ],
   resolve: {
@@ -14,8 +16,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  test: {
-    globals: true,
-    environment: 'jsdom'
+  // test: {
+  //   globals: true,
+  //   environment: 'jsdom'
+  // },
+  server: {
+    port: 3000
   }
 })
