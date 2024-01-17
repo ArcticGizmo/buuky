@@ -29,6 +29,9 @@
       <li>
         <a href="https://blog.hubspot.com/website/api-books">Book apis out there</a>
       </li>
+      <li>
+        <a href="https://isbndb.com/book/9781619635197">Scrape this one</a>
+      </li>
     </ul>
   </BaseTabPage>
 </template>
